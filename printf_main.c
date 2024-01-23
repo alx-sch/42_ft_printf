@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   printf_main.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aschenk <aschenk@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aschenk <aschenk@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 23:43:10 by aschenk           #+#    #+#             */
-/*   Updated: 2024/01/22 23:56:04 by aschenk          ###   ########.fr       */
+/*   Updated: 2024/01/23 13:11:37 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,35 +15,35 @@
 #include <stdarg.h>
 #include "libft/libft.h"
 
-void	ft_putstr_fd(char *s, int fd);
-char	*ft_itoa(int n);
+// void	ft_putstr_fd(char *s, int fd);
+// char	*ft_itoa(int n);
 char	*ft_strchr(const char *s, int c);
 
 
-// int	ft_putchar(char c)
-// {
-// 	write(1, &c, 1);
-// 	return (1);
-// }
+int	ft_putchar(char c)
+{
+	write(1, &c, 1);
+	return (1);
+}
 
-// int	ft_putstr(char *str)
-// {
-// 	int	x;
+int	ft_putstr(char *str)
+{
+	int	x;
 
-// 	x = 0;
-//     if (str == NULL)
-//     {
-//         x = 6;
-//         write(1, "(null)", 6);
-//         return (x);
-//     }
-// 	while (str[x])
-// 	{
-// 		write(1, &str[x], 1);
-// 		x++;
-// 	}
-// 	return (x);
-// }
+	x = 0;
+    if (str == NULL)
+    {
+        x = 6;
+        write(1, "(null)", 6);
+        return (x);
+    }
+	while (str[x])
+	{
+		write(1, &str[x], 1);
+		x++;
+	}
+	return (x);
+}
 
 int	ft_addressprint(unsigned long n)
 {
@@ -81,7 +81,7 @@ int	ft_putaddress(void *format)
 
 	count = 0;
 	n = (unsigned long)format;
-	if (format == NULL)
+	if (n == 0)
     {
         count = 5;
         write(1, "(nil)", 5);
@@ -95,50 +95,50 @@ int	ft_putaddress(void *format)
 	return (count);
 }
 
-// int	ft_nbrlen(int n)
-// {
-// 	int	x;
+int	ft_nbrlen(int n)
+{
+	int	x;
 
-// 	x = 1;
-// 	if (n < 0)
-//     {
-//         n = -n;
-// 		x = 2;
-//     }
-// 	while (n >= 10)
-// 	{
-// 		n /= 10;
-// 		x++;
-// 	}
-// 	return (x);
-// }
+	x = 1;
+	if (n < 0)
+    {
+        n = -n;
+		x = 2;
+    }
+	while (n >= 10)
+	{
+		n /= 10;
+		x++;
+	}
+	return (x);
+}
 
-// int	ft_putnbr(int n)
-// {
-// 	int	x;
+int	ft_putnbr(int n)
+{
+	int	x;
 
-// 	x = ft_nbrlen(n);
-// 	if (n == -2147483648)
-//     {
-// 		write(1, "-2147483648", 11);
-//         x = 11;
-//         return (x);
-//     }
-// 	else if (n < 0)
-// 	{
-// 		ft_putchar('-');
-// 		n = -n;
-// 		ft_putnbr(n);
-// 	}
-// 	else if (n < 10)
-// 		ft_putchar(n + 48);
-// 	else
-// 	{
-// 		ft_putnbr(n / 10);
-// 		ft_putnbr(n % 10);
-// 	}
-// 	return (x);
-// }
+	x = ft_nbrlen(n);
+	if (n == -2147483648)
+    {
+		write(1, "-2147483648", 11);
+        x = 11;
+        return (x);
+    }
+	else if (n < 0)
+	{
+		ft_putchar('-');
+		n = -n;
+		ft_putnbr(n);
+	}
+	else if (n < 10)
+		ft_putchar(n + 48);
+	else
+	{
+		ft_putnbr(n / 10);
+		ft_putnbr(n % 10);
+	}
+	return (x);
+}
 
 int	ft_putunsigned(unsigned int n)
 {
@@ -222,20 +222,20 @@ int	ft_printf(const char *format, ...)
 	return (count);
 }
 
-/*
+
 #include <limits.h>
 #include <stdio.h>
 int main(void)
 {
     int result1;
     int result2;
-    result1 = ft_printf(" %p ", 0);
+    result1 = ft_printf(" %p ", NULL);
     ft_printf("Characters written: %i\n", result1);
-    result2 = printf(" %p ", 0);
+    result2 = printf(" %p ", NULL);
     printf("Characters written: %i\n", result2);
     return (0);
 }
-*/
+
 
 /*#include <stdio.h>
 int main(void)

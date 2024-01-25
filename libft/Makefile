@@ -6,7 +6,7 @@
 #    By: aschenk <aschenk@student.42berlin.de>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/13 11:41:06 by aschenk           #+#    #+#              #
-#    Updated: 2024/01/20 20:58:29 by aschenk          ###   ########.fr        #
+#    Updated: 2024/01/25 19:09:58 by aschenk          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,9 +71,13 @@ OBJS =			${SRCS:.c=.o}
 all:	$(NAME)
 
 # Target $(NAME) depends on object files $(OBJS),
-# and the 'ar rc' command creates the library.
+# and the 'ar rcs' command creates the library.
 $(NAME):	$(OBJS)
 	ar rcs $(NAME) $(OBJS)
+
+# Rule to compile .c files to .o files with specified macros.
+%.o: %.c
+	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BUFFER_SIZE) -D FD_SIZE=$(FD_SIZE) -c $< -o $@
 
 # Target 'clean' removes object files.
 clean:
@@ -85,10 +89,6 @@ fclean:	clean
 
 # Target 're' depends on 'fclean' and 'all', rebuilding the project from scratch.
 re:	fclean all
-
-# Rule to compile .c files to .o files with specified macros.
-%.o: %.c
-	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BUFFER_SIZE) -D FD_SIZE=$(FD_SIZE) -c $< -o $@
 
 # Marking rules as 'phony' to ensure that 'make' doesn't misinterpret them as files.
 .PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: aschenk <aschenk@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 13:44:08 by aschenk           #+#    #+#             */
-/*   Updated: 2023/11/24 19:22:31 by aschenk          ###   ########.fr       */
+/*   Updated: 2024/01/26 22:52:19 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 The strchr() function is designed to locate a specific character within a string.
 Upon finding the character, it returns a pointer pointing to the first occurrence
 of that particular character. In the event that no instance of the character is
-found, the function returns NULL.
+found, the function returns NU LL.
 It's important to note that if the character being searched for is '\0',
 the function still needs to return a pointer pointing to this character.
 */

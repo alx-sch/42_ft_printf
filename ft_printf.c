@@ -6,7 +6,7 @@
 /*   By: aschenk <aschenk@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 23:43:10 by aschenk           #+#    #+#             */
-/*   Updated: 2024/01/25 19:08:05 by aschenk          ###   ########.fr       */
+/*   Updated: 2024/01/26 22:42:27 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	print_count_number(int nbr);
 int	print_count_hex(uintptr_t nbr, char format);
 
 //	%p: Prints the memory address represented by a pointer,
-//	including the '0x' prefix to indicate hexadecimal (base 16) notation.
+//	including the '0x' prefix to indicat e hexadecimal (base 16) notation.
 //	Returns the printout length or '(nil)' if the pointer is NULL.
 static int	print_count_pointer(uintptr_t ptr)
 {

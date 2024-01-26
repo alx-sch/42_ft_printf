@@ -6,7 +6,7 @@
 /*   By: aschenk <aschenk@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/13 17:31:45 by aschenk           #+#    #+#             */
-/*   Updated: 2023/12/05 11:44:22 by aschenk          ###   ########.fr       */
+/*   Updated: 2024/01/26 22:49:33 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_toupper(int c)
 }
 
 /*
-#include <stdio.h>
+#include <stdio.h >
 
 int	main(void)
 {

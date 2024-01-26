@@ -31,7 +31,8 @@ Variadic functions, also known as variable argument functions, allow users to pa
   int result = ft_printf("Hello, %s! You scored %d points.", "Betty", 42);
   // 'result' contains the number of characters printed by ft_printf -> 35
   ```
-    - Variable arugments: "Betty" (char *) and 42 (int).
+    - In the printout, variable arguments "Betty" (char *) and 42 (int) will be formatted by and replaced with the format specifiers %s and %d, respectively.
+
 
 ## Acknowledgements
 

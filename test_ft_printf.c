@@ -6,7 +6,7 @@
 /*   By: aschenk <aschenk@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:13:24 by aschenk           #+#    #+#             */
-/*   Updated: 2024/01/26 11:24:19 by aschenk          ###   ########.fr       */
+/*   Updated: 2024/01/26 23:59:46 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -157,7 +157,7 @@ int	main(void)
 	printf("Return value: %d\n", length_native);
 	printf("\n============\n\n");
 
-		// Testing %x %X
+	// Testing %x %X
 	printf("== TESTING: %%x/%%X ==\n");
 	printf("-- ft_printf(): --\n");
 	length_my_fct = ft_printf("Printing %d as hex: %x\n", nbr, nbr); ////////
@@ -167,6 +167,50 @@ int	main(void)
 	printf("-- printf(): --\n");
 	length_native = printf("Printing %d as hex: %x\n", nbr, nbr); ////////
 	printf("Printing %d as HEX: %X\n", nbr, nbr); ////////
+	printf("Return value: %d\n", length_native);
+	printf("\n============\n\n");
+
+	// Testing invalid specifier
+	printf("== TESTING: invalid specifier ==\n");
+	printf("-- ft_printf(): --\n");
+	length_my_fct = ft_printf("Printing out specifier %%k: %k\n", nbr); ////////
+	printf("Return value: %d\n", length_my_fct);
+
+	printf("-- printf(): --\n");
+	length_native = printf("Printing out specifier %%k: %k\n", nbr); ////////
+	printf("Return value: %d\n", length_native);
+	printf("\n============\n\n");
+
+	// Testing % at EOF
+	printf("== TESTING: %% at EOF ==\n");
+	printf("-- ft_printf(): --\n");
+	length_my_fct = ft_printf("%% at EOF->%"); ////////
+	printf("Return value: %d\n", length_my_fct);
+
+	printf("-- printf(): --\n");
+	length_native = printf("%% at EOF->%"); ////////
+	printf("Return value: %d\n", length_native);
+	printf("\n============\n\n");
+
+	// Testing only ' ' after %
+	printf("== TESTING: only ' ' after %% ==\n");
+	printf("-- ft_printf(): --\n");
+	length_my_fct = ft_printf("%% end: %   "); ////////
+	printf("Return value: %d\n", length_my_fct);
+
+	printf("-- printf(): --\n");
+	length_native = printf("%% end: %   "); ////////
+	printf("Return value: %d\n", length_native);
+	printf("\n============\n\n");
+
+	// Testing multiple ' ' between % and non-exisingt specifier
+	printf("== TESTING: Multiple ' ' between %% and non-existing specifier ==\n");
+	printf("-- ft_printf(): --\n");
+	length_my_fct = ft_printf("%% here->%   \n"); ////////
+	printf("Return value: %d\n", length_my_fct);
+
+	printf("-- printf(): --\n");
+	length_native = printf("%% here->%   \n"); ////////
 	printf("Return value: %d\n", length_native);
 	printf("\n============\n\n");
 

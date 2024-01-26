@@ -6,7 +6,7 @@
 /*   By: aschenk <aschenk@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:13:24 by aschenk           #+#    #+#             */
-/*   Updated: 2024/01/26 11:17:57 by aschenk          ###   ########.fr       */
+/*   Updated: 2024/01/26 11:24:19 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ int	main(void)
 	// Testing w/o any format specificer
 	printf("\n== TESTING: No Format Specificer ==\n");
 	printf("-- ft_printf(): --\n");
-	length_my_fct = ft_printf("No formatters be found!\n"); ////////
+	length_my_fct = ft_printf("No formatters to be found!\n"); ////////
 	printf("Return value: %d\n", length_my_fct);
 	length_native = printf("No formatters to be found!\n"); ////////
 	printf("Return value: %d\n", length_native);

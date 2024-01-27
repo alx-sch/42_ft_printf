@@ -50,7 +50,7 @@ It's important to note that the behavior of printf() is not defined in certain e
 
 Witt the following specifications:
  ```bash
- # Ubutnu (v. 22.04) / x86_64
+ # Ubutnu (v. 22.04) / x86_64 (64-bit)
  gcc --version
  gcc (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
 ```

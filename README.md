@@ -42,7 +42,7 @@ Variadic functions, also known as variable argument functions, allow users to pa
 ## Error Handling 
 It's important to note that the behavior of printf() is not defined in certain edge cases, such as invalid format or argument input, and can vary depending on the platform it's executed on. For instance, I observed the following differences:
 
-| Case | Command | Printout (Ubuntu) | Printout (MacOs) |
+| Case | Command | Printout (Ubuntu) | Printout (macOS) |
 | --- | --- | --- | --- |
 | NULL pointer | `printf("->%p", (void*)ptr);`| `->(nil)` (Return: 7) | `->0x0` (Return: 5) |
 | Invalid specifier | `printf("->%k", nbr);` | `->%k` (Return: 4) | `->k` (Return: 3) |
@@ -57,7 +57,7 @@ With the following specifications:
  gcc (Ubuntu 10.5.0-1ubuntu1~22.04) 10.5.0
 ```
  ```bash
- # MacOs: Darwin (v. 23.3.0) / x86_64 (64-bit)
+ # macOS: Darwin (v. 23.3.0) / x86_64 (64-bit)
  gcc --version
  Apple clang version 15.0.0 (clang-1500.1.0.2.5)
 ```

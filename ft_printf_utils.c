@@ -6,7 +6,7 @@
 /*   By: aschenk <aschenk@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 23:43:10 by aschenk           #+#    #+#             */
-/*   Updated: 2024/01/25 18:27:03 by aschenk          ###   ########.fr       */
+/*   Updated: 2024/01/27 01:40:18 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 size_t	ft_strlen(const char *str);
-char	*ft_strchr(const char *s, int c);
 
 //	%c: Prints a single character and returns printout length.
 int	print_count_char(char _char)

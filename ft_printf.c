@@ -6,19 +6,22 @@
 /*   By: aschenk <aschenk@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 23:43:10 by aschenk           #+#    #+#             */
-/*   Updated: 2024/01/27 00:38:24 by aschenk          ###   ########.fr       */
+/*   Updated: 2024/01/27 01:42:13 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "ft_printf.h"
 
+//	Included from libft
+char	*ft_strchr(const char *s, int c);
+
 // Util Functions as found in ft_printf_utils.c
-int	print_count_char(char _char);
-int	print_count_string(char *str);
-int	print_count_unsigned(unsigned int nbr);
-int	print_count_number(int nbr);
-int	print_count_hex(uintptr_t nbr, char format);
+int		print_count_char(char _char);
+int		print_count_string(char *str);
+int		print_count_unsigned(unsigned int nbr);
+int		print_count_number(int nbr);
+int		print_count_hex(uintptr_t nbr, char format);
 
 //	%p: Prints the memory address represented by a pointer,
 //	including the '0x' prefix to indicate hexadecimal (base 16) notation.
@@ -29,6 +32,27 @@ static int	print_count_pointer(uintptr_t ptr)
 		return (print_count_string("(nil)"));
 	else
 		return (print_count_string("0x") + print_count_hex(ptr, 'x'));
+}
+
+// Checks for EOF or 'only whitespace left' in position 'i' of format string.
+static int	check_error(const char *format, int i)
+{
+	if (!format[i + 1])
+		return (1);
+	while (ft_strchr(" \t\n\v\f\r", format[i + 1]))
+	{
+		if (!format[i + 2])
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+// Helper function used in ft_printf() to close va list and return '-1'.
+static int	return_error(va_list args)
+{
+	va_end(args);
+	return (-1);
 }
 
 /*
@@ -64,12 +88,6 @@ static int	print_count_specifier(const char specifier, va_list args)
 	return (len_specifier);
 }
 
-static int	return_error(va_list args)
-{
-	va_end(args);
-	return (-1);
-}
-
 /*
 A simplified implementation of the printf function in C.
 
@@ -77,8 +95,9 @@ A simplified implementation of the printf function in C.
 			Supported format specif ers: 'c', 's', 'p', 'd', 'i', 'u', 'x', 'X', '%'.
 @...:		Variable arguments to be formatted according to the format string.
 
-Returns:	The total length of characters printed. Returns '-1' when an error
-			occurred (here: if '%' is last character of the format string).
+Returns:	The total length of characters printed.  In case of an error, indicated
+			by the absence of any specifier or when only whitespace follows a '%',
+			the function returns '-1'.
 
 Iterates through the format string, replacing placeholders with
 actual values from the variable argument list.
@@ -96,12 +115,12 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (!format[i + 1])
+			if (check_error(format, i))
 				return (return_error(args));
 			if (ft_strchr("cspdiuxX%", format[i + 1]))
 				total_len += print_count_specifier(format[i + 1], args);
 			else
-				total_len += print_count_char(format[i]);
+				total_len += print_count_char(format[i + 1]);
 			i++;
 		}
 		else

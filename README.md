@@ -38,7 +38,13 @@ Variadic functions, also known as variable argument functions, allow users to pa
     - `va_start(args, format)`:
  
 ## Error Handling 
-XXX XX
+It's important to notice that printf() behavior in certain edge cases (like not invalid format or argument input) is not defined and depends on the platform it's executed on. For example, I noticed the following differences, depending on :
+
+| Case | Command | Printout Ubuntu | Printout MacOs |
+| --- | --- | --- | --- |
+| NULL pointer | `printf("->%p\n", (void*)ptr);`| `->(nil)` Return: 8 | `->0x0` Return: 6 |
+| Invalid specifier | `printf("->%k\n", nbr);` | `->%k` Return: 5 | `->k` Return: 4 |
+| % at EOF | `printf("->%");` | `->` Return: -1 | `->` Return: 2 |
 
 ## Acknowledgements
 

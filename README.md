@@ -1,4 +1,4 @@
-# 42_printf
+# 42_ft_printf
 
 <p align="center">
     <img src="https://github.com/alx-sch/42_printf/assets/134595144/f0c52cd6-4282-4a69-9b03-5befc5335003" alt="libft" />

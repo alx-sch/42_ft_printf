@@ -6,7 +6,7 @@
 /*   By: aschenk <aschenk@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/22 23:43:10 by aschenk           #+#    #+#             */
-/*   Updated: 2024/01/27 01:42:13 by aschenk          ###   ########.fr       */
+/*   Updated: 2024/01/27 16:27:50 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static int	check_error(const char *format, int i)
 {
 	if (!format[i + 1])
 		return (1);
-	while (ft_strchr(" \t\n\v\f\r", format[i + 1]))
+	while (format[i + 1] == ' ')
 	{
 		if (!format[i + 2])
 			return (1);

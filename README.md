@@ -9,7 +9,7 @@ A custom implementation of a simplied printf() function, employing variadic func
 ## Features
 
 - **Variadic Format Handling:** Supports a variable number of arguments using variadic functions.
-- **Format Specifiers:** Accomodates commonly used format specifiers for printf():
+- **Format Specifiers:** Supports commonly used format specifiers for printf():
     - **%c:**        Character
     - **%s:**        String
     - **%p:**        Pointer

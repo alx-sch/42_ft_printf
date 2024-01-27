@@ -18,7 +18,7 @@ A custom implementation of a simplied printf() function, employing variadic func
     - **%x, %X:** Hexadecimal
     - **%%:** Percentage Sign
  - **Inclusion of Libft:** Leverages existing Libft functions to enhance code reusability, minimize redundancies, and ensure project coherence.
- - **Error Handling:** Manages unexpected user input in a controlled way.
+ - [**Error Handling**](#error-handling)**:** Manages invalid input formats or arguments in a controlled way.
 
 ## Variadic Functions
 Variadic functions, also known as variable argument functions, allow users to pass different types and numbers of arguments to the function. Let's have a closer look at ft_printf() to understand this better:
@@ -36,6 +36,9 @@ Variadic functions, also known as variable argument functions, allow users to pa
 - **Variadic Macros:**
     - `va_list`: Is a data type representing a list of arguments, commonly used as a parameter for variadic functions `va_list args` is ....
     - `va_start(args, format)`:
+ 
+## Error Handling 
+XXX XX
 
 ## Acknowledgements
 

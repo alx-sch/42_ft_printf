@@ -42,9 +42,11 @@ It's important to notice that printf() behavior in certain edge cases (like not 
 
 | Case | Command | Printout Ubuntu | Printout MacOs |
 | --- | --- | --- | --- |
-| NULL pointer | `printf("->%p\n", (void*)ptr);`| `->(nil)` Return: 8 | `->0x0` Return: 6 |
-| Invalid specifier | `printf("->%k\n", nbr);` | `->%k` Return: 5 | `->k` Return: 4 |
+| NULL pointer | `printf("->%p", (void*)ptr);`| `->(nil)` Return: 7 | `->0x0` Return: 5 |
+| Invalid specifier | `printf("->%k", nbr);` | `->%k` Return: 4 | `->k` Return: 3 |
 | % at EOF | `printf("->%");` | `->` Return: -1 | `->` Return: 2 |
+| Space(s) between % and EOF | `printf("->%   ");` | `->` Return: -1 | `->` Return: 2 |
+| Space(s) between % and inv. spec. | `printf("->%   k");` | `->% k` Return: 5 | `->k` Return: 3 |
 
 ## Acknowledgements
 

@@ -38,15 +38,15 @@ Variadic functions, also known as variable argument functions, allow users to pa
     - `va_start(args, format)`:
  
 ## Error Handling 
-It's important to notice that printf() behavior in certain edge cases (like not invalid format or argument input) is not defined and depends on the platform it's executed on. For example, I noticed the following differences, depending on :
+It's important to note that the behavior of printf() in certain edge cases (such as invalid format or argument input) is not defined and depends on the platform it's executed on. For example, I observed the following differences depending on the platform:
 
-| Case | Command | Printout Ubuntu | Printout MacOs |
+| Case | Command | Printout (Ubuntu) | Printout (MacOs) |
 | --- | --- | --- | --- |
-| NULL pointer | `printf("->%p", (void*)ptr);`| `->(nil)` Return: 7 | `->0x0` Return: 5 |
-| Invalid specifier | `printf("->%k", nbr);` | `->%k` Return: 4 | `->k` Return: 3 |
-| % at EOF | `printf("->%");` | `->` Return: -1 | `->` Return: 2 |
-| Space(s) between % and EOF | `printf("->%   ");` | `->` Return: -1 | `->` Return: 2 |
-| Space(s) between % and inv. spec. | `printf("->%   k");` | `->% k` Return: 5 | `->k` Return: 3 |
+| NULL pointer | `printf("->%p", (void*)ptr);`| `->(nil)` (Return: 7) | `->0x0` (Return: 5) |
+| Invalid specifier | `printf("->%k", nbr);` | `->%k` (Return: 4) | `->k` (Return: 3) |
+| % at EOF | `printf("->%");` | `->` (Return: -1) | `->` (Return: 2) |
+| Space(s) between % and EOF | `printf("->%   ");` | `->` (Return: -1) | `->` (Return: 2) |
+| Space(s) between % and invalid spec. | `printf("->%   k");` | `->% k` (Return: 5) | `->k` (Return: 3) |
 
 ## Acknowledgements
 

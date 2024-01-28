@@ -72,4 +72,4 @@ Several test cases, which compare the printout and return values of ft_printf() 
 Note: The 'incomplete format specifier' warnings for printf() are expected as part of the testing process; please go ahead and ignore these.
 
 ## Acknowledgements
-- The project badge used is retrieved from [this repo](https://github.com/ayogun/42-project-badges) by Ali Ogun.
+The project badge used is retrieved from [this repo](https://github.com/ayogun/42-project-badges) by Ali Ogun.

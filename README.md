@@ -48,7 +48,7 @@ It's important to recognize that the behavior of printf() may bot be well-define
 | Invalid specifier | `printf("->%k", nbr);` | `->%k` (Return: 4) | `->k` (Return: 3) |
 | % at EOF | `printf("->%");` | `->` (Return: -1) | `->` (Return: 2) |
 | Space(s) between % and EOF | `printf("->%   ");` | `->` (Return: -1) | `->` (Return: 2) |
-| Space(s) between % and invalid spec. | `printf("->%   k");` | `->% k` (Return: 5) | `->k` (Return: 3) |
+| Space(s) between % and invalid specifier | `printf("->%   k");` | `->% k` (Return: 5) | `->k` (Return: 3) |
 
 **Specifications:**
 - Ubuntu (v. 22.04) / x86_64

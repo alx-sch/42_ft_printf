@@ -40,7 +40,7 @@ Variadic functions, also known as variable argument functions, allow users to pa
     - `va_end(args)`: Cleans up the 'va_list' and should be called before the variadic function using va_start() returns.
  
 ## Error Handling 
-It's important to recognize that the behavior of printf() may bot be well-defined in certain edge cases, such as invalid format or argument inputs. Moreover, this behavior can vary depending on the platform of execution; I observed differences between Ubuntu and macOS in the following scenarios:
+It's important to recognize that the behavior of printf() may not be well-defined in certain edge cases, such as invalid format or argument inputs. Moreover, this behavior can vary depending on the platform of execution; I observed differences between Ubuntu and macOS in the following scenarios:
 
 | Case | Command | Printout (Ubuntu) | Printout (macOS) |
 | --- | --- | --- | --- |

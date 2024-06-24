@@ -6,7 +6,7 @@
 /*   By: aschenk <aschenk@student.42berlin.de>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/26 11:13:24 by aschenk           #+#    #+#             */
-/*   Updated: 2024/06/24 21:14:29 by aschenk          ###   ########.fr       */
+/*   Updated: 2024/06/24 22:25:34 by aschenk          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -182,19 +182,6 @@ int	main(void)
 
 	check_return_values(length_my_fct, length_native);
 
-	// Testing %p null pointer
-	printf(BOLD "== TESTING: %%p NULL Pointer ==\n\n" RESET);
-
-	printf("-- ft_printf() --\n");
-	length_my_fct = ft_printf("Printing pointer->%p", (void*)NULL);
-	printf("\nReturn value: %d\n\n", length_my_fct);
-
-	printf("-- printf() --\n");
-	length_native = printf("Printing pointer->%p", (void*)NULL);
-	printf("\nReturn value: %d\n\n", length_native);
-
-	check_return_values(length_my_fct, length_native);
-
 	// Testing %x %X
 	printf(BOLD "== TESTING: %%x/%%X ==\n\n" RESET);
 
@@ -210,9 +197,52 @@ int	main(void)
 
 	check_return_values(length_my_fct, length_native);
 
+	// Testing series of conversion
+	printf(BOLD "== TESTING: Series of conversions ==\n\n" RESET);
+
+	printf("-- ft_printf() --\n");
+	length_my_fct = ft_printf("Variable c in different conversions:"
+			" %c, %i, %d, %u, %x", c, c, c, c, c);
+	printf("\nReturn value: %d\n\n", length_my_fct);
+
+	printf("-- printf() --\n");
+	length_native = printf("Variable c in different conversions:"
+			" %c, %i, %d, %u, %x", c, c, c, c, c);
+	printf("\nReturn value: %d\n\n", length_native);
+
+	check_return_values(length_my_fct, length_native);
+
+	// Testing %p null pointer
+	printf(BOLD "== TESTING: %%p NULL Pointer ==\n" RESET);
+	printf("WARNING: printout/return value is not well-defined.\n\n");
+
+	printf("-- ft_printf() --\n");
+	length_my_fct = ft_printf("Printing pointer->%p", (void*)NULL);
+	printf("\nReturn value: %d\n\n", length_my_fct);
+
+	printf("-- printf() --\n");
+	length_native = printf("Printing pointer->%p", (void*)NULL);
+	printf("\nReturn value: %d\n\n", length_native);
+
+	check_return_values(length_my_fct, length_native);
+
+	// Space between % and specifier
+	printf(BOLD "== TESTING: Space between %% and specifier ==\n" RESET);
+	printf("WARNING: printout/return value is not well-defined.\n\n");
+
+	printf("-- ft_printf() --\n");
+	length_my_fct = ft_printf("Printing a string: %   s", str);
+	printf("\nReturn value: %d\n\n", length_my_fct);
+
+	printf("-- printf() --\n");
+	length_native = printf("Printing a string: %   s", str);
+	printf("\nReturn value: %d\n\n", length_native);
+
+	check_return_values(length_my_fct, length_native);
+
 	// Testing % at EOF
 	printf(BOLD "== TESTING: %% at EOF ==\n" RESET);
-	printf("Undefined behavior! printf() result/printout depends on OS!\n\n" );
+	printf("WARNING: printout/return value is not well-defined.\n\n");
 
 	printf("-- ft_printf() --\n");
 	length_my_fct = ft_printf("%% at EOF->%");
@@ -226,7 +256,7 @@ int	main(void)
 
 	// Testing space after %
 	printf(BOLD "== TESTING: Only Spaces after %% ==\n" RESET);
-	printf("Undefined behavior! printf() result/printout depends on OS!\n\n" );
+	printf("WARNING: printout/return value is not well-defined.\n\n");
 
 	printf("-- ft_printf() --\n");
 	length_my_fct = ft_printf("->%   ");
@@ -240,7 +270,7 @@ int	main(void)
 
 	// Testing undefined specifier
 	printf(BOLD "== TESTING: Undefined specifier ==\n" RESET);
-	printf("Undefined behavior! printf() result/printout depends on OS!\n\n" );
+	printf("WARNING: printout/return value is not well-defined.\n\n");
 
 	printf("-- ft_printf() --\n");
 	length_my_fct = ft_printf("->%k");
@@ -251,7 +281,6 @@ int	main(void)
 	printf("\nReturn value: %d\n\n", length_native);
 
 	check_return_values(length_my_fct, length_native);
-
 
 	return (0);
 }

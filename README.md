@@ -70,7 +70,7 @@ Regarding the representation of NULL pointers, I opted to print '(nil)'. Other e
 Several test cases, which compare the printout and return values of ft_printf() with those of the native printf(), are available in 'test_ft_printf.c'. After compiling the project's library, create the test program using the command `cc -o TEST test_ft_printf.c libftprintf.a` and execute via `./TEST`.
 
 **Note:**
-- The 'incomplete format specifier' and 'invalid conversion specifier' warnings during compilation are expected, so please go ahead and ignore these.
+- Warnings during compilation are expected, so please go ahead and ignore these.
 - The last five tests deal with edge cases that result in undefined behavior (as described in the [Error Handling](https://github.com/alx-sch/42_push_swap/blob/main/README.md#enhancing-the-turk-algorithm](https://github.com/alx-sch/42_ft_printf/edit/main/README.md#error-handling)) section). Therefore, the comparison of printouts and return values between ft_printf() and the native printf() may not be very meaningful and, in my opinion, should not be considered for project evaluation.
 
 ## Acknowledgements

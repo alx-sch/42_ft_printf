@@ -37,7 +37,7 @@ Variadic functions, also known as variable argument functions, allow users to pa
     - `va_list`: A data type representing a list of arguments. The variable 'args' used below is declared of this type.
     - `va_start(args, format)`: Initializes the va_list 'args' to point to the first variable argument, which follows the 'format' string (in `int ft_printf(const char *format, ...)`, the first variable argument comes right after the 'format' parameter).
     - `va_arg(args, type)`: Retrieves the next argument from the va_list 'args' using the specified type. This macro allows you to iterate through the 'va_list' by calling it repeatedly, similar to the concept of iterating through lines with [get_next_line()](https://github.com/alx-sch/42_get_next_line).
-    - `va_end(args)`: Cleans up the 'va_list' and should be called before the variadic function using va_start() returns.
+    - `va_end(args)`: Cleans up the 'va_list' and should be called before the variadic function that used va_start() returns.
  
 ## Error Handling 
 It's important to recognize that the behavior of printf() may not be well-defined in certain edge cases, such as invalid format or argument inputs. Moreover, this behavior can vary depending on the platform of execution; I observed differences between Ubuntu and macOS in the following scenarios:

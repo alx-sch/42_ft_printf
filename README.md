@@ -32,7 +32,7 @@ Variadic functions, also known as variable argument functions, allow users to pa
       int result = ft_printf("Hello, %s! You scored %d points.\n", "Betty", 42);
       // 'result' contains the number of characters printed by ft_printf() -> 36
       ```
-        - In the printout, the variable arguments "Betty" (char *) and 42 (int) are formatted and replaced with the corresponding format specifiers %s and %d, respectively, in the provided format string.
+        - In the printout,the format specifiers %s and %d are replaced with "Betty" [char *] and 42 [int], respectively.
 - **Variadic Macros:**
     - `va_list`: A data type representing a list of arguments. The variable 'args' used below is declared of this type.
     - `va_start(args, format)`: Initializes the va_list 'args' to point to the first variable argument, which follows the 'format' string (in `int ft_printf(const char *format, ...)`, the first variable argument comes right after the 'format' parameter).

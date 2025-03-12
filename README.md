@@ -74,4 +74,4 @@ Several test cases, which compare the printout and return values of ft_printf() 
 - The last five tests deal with edge cases that result in undefined behavior (as described in the [Error Handling](https://github.com/alx-sch/42_push_swap/blob/main/README.md#enhancing-the-turk-algorithm](https://github.com/alx-sch/42_ft_printf/edit/main/README.md#error-handling)) section). Therefore, the comparison of printouts and return values between ft_printf() and the native printf() may not be very meaningful and, in my opinion, should not be considered for project evaluation.
 
 ## Acknowledgements
-The project badge used is retrieved from [this repo](https://github.com/ayogun/42-project-badges) by Ali Ogun.
+The project badge is from [this repo](https://github.com/ayogun/42-project-badges) by Ali Ogun.
